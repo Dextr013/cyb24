@@ -1,0 +1,73 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Cyberpunk 2048"
+run/main_scene="uid://ciqd4luq0ewwa"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="uid://bjg7sdmaixj2j"
+
+[autoload]
+
+MenuManager="*res://autoload/MenuManager.gd"
+YandexIntegration="*res://autoload/YandexIntegration.gd"
+AchievementsManager="*res://AchievementsManager.gd"
+AdvertisementManager="*res://scripts/AdvertisementManager.gd"
+GameData="*res://scripts/GameData.gd"
+AppConfig="*res://addons/maaacks_menus_template/base/scenes/autoloads/app_config.tscn"
+SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.tscn"
+ProjectMusicController="*res://addons/maaacks_music_controller/base/scenes/autoloads/project_music_controller.tscn"
+ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
+MusicManager="*res://MusicManager.gd"
+DeviceManager="*res://DeviceManager.gd"
+CyberpunkUi="*res://CyberpunkUI.gd"
+MainSceneStyles="*res://MainSceneStyles.gd"
+WebBus="*res://addons/WebBusPlugin/WebBus.gd"
+LanguageManager="*res://language_manager.gd"
+
+[display]
+
+window/energy_saving/keep_screen_on=false
+window/stretch/mode="viewport"
+
+[editor]
+
+autoload=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/WebBusPlugin/plugin.cfg", "res://addons/maaacks_menus_template/plugin.cfg", "res://addons/maaacks_music_controller/plugin.cfg")
+
+[filesystem]
+
+import/fbx2gltf/enabled.web=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_menus_template/base/translations/menus_translations.en.translation", "res://addons/maaacks_menus_template/base/translations/menus_translations.fr.translation")
+
+[maaacks_menus_template]
+
+disable_install_audio_busses=true
+disable_update_check=false
+disable_install_wizard=true
+copy_path="res://"
+
+[maaacks_music_controller]
+
+disable_install_audio_busses=true
+disable_update_check=false
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

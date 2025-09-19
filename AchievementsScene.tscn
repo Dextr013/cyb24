@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://v5cikurmm6h3"]
+
+[ext_resource type="Script" uid="uid://bsy25nonu2dxv" path="res://AchievementsScene.gd" id="1_4r2m1"]
+[ext_resource type="Texture2D" uid="uid://byku1yqfnigod" path="res://assets/backgrounds/1757930417.png" id="2_dmflh"]
+
+[node name="AchievementsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 36.0
+offset_bottom = 36.0
+script = ExtResource("1_4r2m1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 1032.0
+offset_bottom = 992.0
+texture = ExtResource("2_dmflh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+follow_focus = true
+
+[node name="AchievementsList" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2

@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy7jhqhgo67o4"]
+
+[ext_resource type="Script" uid="uid://dbjaic0ifivj8" path="res://scripts/SettingsMenu.gd" id="1_05p07"]
+[ext_resource type="Texture2D" uid="uid://d1rpmiu2cn356" path="res://assets/backgrounds/Mainmenu.webp" id="2_cr101"]
+[ext_resource type="ButtonGroup" uid="uid://dmed5jj4q7wto" path="res://menu_buttons.tres" id="3_wswnh"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_05p07")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_cr101")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_right = 62.5
+offset_bottom = 137.0
+grow_horizontal = 2
+
+[node name="MusicToggle" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music on/off"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_wswnh")
+text = "Back"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Language"
+
+[node name="MusicToggleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LanguageOption" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
+button_group = ExtResource("3_wswnh")
+
+[node name="LanguageLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2

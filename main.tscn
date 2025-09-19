@@ -1,0 +1,223 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkigc6p8ybfho"]
+
+[ext_resource type="Script" uid="uid://k7kroacim1g8" path="res://scripts/main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b6eoys575n12s" path="res://assets/backgrounds/bg1.webp" id="2"]
+[ext_resource type="ButtonGroup" uid="uid://cclnowhnxcy6r" path="res://buttons.tres" id="3_h2yge"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2")
+expand_mode = 2
+
+[node name="GridBackground" type="Node2D" parent="."]
+
+[node name="TilesContainer" type="Node2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 243.0
+offset_bottom = 271.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ButtonsContainer"]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="UI/ButtonsContainer/VBoxContainer"]
+layout_direction = 4
+layout_mode = 2
+focus_mode = 0
+button_group = ExtResource("3_h2yge")
+text = "Restart"
+
+[node name="UndoButton" type="Button" parent="UI/ButtonsContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_group = ExtResource("3_h2yge")
+text = "Undo"
+
+[node name="MenuButton" type="Button" parent="UI/ButtonsContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_group = ExtResource("3_h2yge")
+text = "Menu"
+
+[node name="NewGameButton" type="Button" parent="UI/ButtonsContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_group = ExtResource("3_h2yge")
+text = "New Game"
+
+[node name="SettingsButton" type="Button" parent="UI/ButtonsContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+button_group = ExtResource("3_h2yge")
+text = "Settings"
+
+[node name="MovesLabel" type="Label" parent="UI"]
+layout_mode = 2
+offset_right = 93.0
+offset_bottom = 23.0
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 195.0
+offset_top = 6.0
+offset_right = 256.0
+offset_bottom = 29.0
+grow_horizontal = 2
+text = "Score: 0"
+
+[node name="BestScoreLabel" type="Label" parent="UI"]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 290.0
+offset_top = 7.0
+offset_right = 342.0
+offset_bottom = 30.0
+grow_horizontal = 2
+text = "Best: 0"
+
+[node name="TimeLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="UIContainer" type="Container" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinsLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GameOverPanel" type="Panel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 300.0
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameOverPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="FinalScoreLabel" type="Label" parent="UI/GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "Game Over!
+Final Score: 0"
+horizontal_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="UI/GameOverPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="UI/GameOverPanel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="QuitButton" type="Button" parent="UI/GameOverPanel/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+
+[node name="SettingsPanel" type="Panel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 300.0
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/SettingsPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MusicHBox" type="HBoxContainer" parent="UI/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicHSlider" type="HSlider" parent="UI/SettingsPanel/VBoxContainer/MusicHBox"]
+layout_mode = 2
+
+[node name="Music Volume" type="Label" parent="UI/SettingsPanel/VBoxContainer/MusicHBox"]
+layout_mode = 2
+
+[node name="BackgroundHBox" type="HBoxContainer" parent="UI/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Background" type="Label" parent="UI/SettingsPanel/VBoxContainer/BackgroundHBox"]
+layout_mode = 2
+text = "Background Rotation"
+
+[node name="BackgroundOption" type="OptionButton" parent="UI/SettingsPanel/VBoxContainer/BackgroundHBox"]
+layout_mode = 2
+button_pressed = true
+
+[node name="LanguageOption" type="OptionButton" parent="UI/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicToggleHBox" type="HBoxContainer" parent="UI/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Music Enabled" type="Label" parent="UI/SettingsPanel/VBoxContainer/MusicToggleHBox"]
+layout_mode = 2
+
+[node name="MusicCheckBox" type="CheckBox" parent="UI/SettingsPanel/VBoxContainer/MusicToggleHBox"]
+layout_mode = 2
+
+[node name="LanguageHBox" type="HBoxContainer" parent="UI/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Language" type="Label" parent="UI/SettingsPanel/VBoxContainer/LanguageHBox"]
+layout_mode = 2
+
+[node name="LanguageOption" type="OptionButton" parent="UI/SettingsPanel/VBoxContainer/LanguageHBox"]
+layout_mode = 2
+
+[node name="CloseSettingsButton" type="Button" parent="UI/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FocusCapture" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 8.0
+offset_right = 162.0
+offset_bottom = 193.0
+mouse_filter = 2
+
+[node name="TouchControls" type="TouchScreenButton" parent="."]

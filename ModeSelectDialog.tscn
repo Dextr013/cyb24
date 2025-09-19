@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://btkk6hlj3cpbe"]
+
+[ext_resource type="Script" uid="uid://dbyjdb32n1eit" path="res://scripts/ModeSelectDialog.gd" id="1_18p7g"]
+
+[node name="ModeSelectDialog" type="Window"]
+script = ExtResource("1_18p7g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 85.0
+offset_bottom = 171.0
+
+[node name="ClassicButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Classic"
+
+[node name="TimedButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Timed"
+
+[node name="LimitedButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Limited"
+
+[node name="ChallengeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Challenge"
+
+[node name="CloseButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Close"

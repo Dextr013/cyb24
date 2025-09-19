@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://ran4xb1kxsxd"]
+
+[ext_resource type="Script" uid="uid://dhybix0wrjtcs" path="res://scripts/MainMenu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://d1rpmiu2cn356" path="res://assets/backgrounds/Mainmenu.webp" id="2_ekxnf"]
+[ext_resource type="ButtonGroup" uid="uid://dmed5jj4q7wto" path="res://menu_buttons.tres" id="3_bqqt6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+border_color = Color(0.833494, 0.832149, 0.253604, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l6cm7")
+
+[node name="CopyrightLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1664.0
+offset_bottom = 928.0
+texture = ExtResource("2_ekxnf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_direction = 4
+layout_mode = 0
+offset_left = 400.0
+offset_top = 155.0
+offset_right = 544.0
+offset_bottom = 353.0
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+button_group = ExtResource("3_bqqt6")
+text = "Start"
+icon_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+button_group = ExtResource("3_bqqt6")
+text = "Continue"
+
+[node name="ModeSelectButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+button_group = ExtResource("3_bqqt6")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+button_group = ExtResource("3_bqqt6")
+text = "settings"
+icon_alignment = 1
+
+[node name="LeaderboardButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+button_group = ExtResource("3_bqqt6")
+text = "LeaderBoard"
+
+[node name="AchievementsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+button_group = ExtResource("3_bqqt6")
+text = "Achievements"
+
+[node name="DailyRewardButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+button_group = ExtResource("3_bqqt6")
+text = "Quit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinsLabel" type="Label" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="BestScoreLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="AchievementsDialog" type="Window" parent="."]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AchievementsDialog"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AchievementsDialog/VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VolumeContainer"]
+layout_mode = 2
+
+[node name="VolumeSlider" type="HSlider" parent="VolumeContainer"]
+visible = false
+layout_mode = 2
